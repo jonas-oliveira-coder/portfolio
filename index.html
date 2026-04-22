@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <!-- Modern Premium Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Background Animated Shapes -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <nav class="navbar glass">
+      <div class="logo">Portfo<span>lio</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero section">
+        <div class="hero-content">
+          <span class="badge">Welcome to my space</span>
+          <h1>Hi, I'm <span class="gradient-text">John Doe</span></h1>
+          <p class="subtitle">I craft beautiful, dynamic, and state-of-the-art web experiences that leave a lasting impression.</p>
+          <div class="hero-actions">
+            <!-- CV Download Button -->
+            <a href="/cv.pdf" download class="btn btn-primary">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              Download CV
+            </a>
+            <a href="#projects" class="btn btn-secondary">View Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="projects-grid">
+          <div class="project-card glass">
+            <div class="project-img placeholder-img"></div>
+            <h3>E-Commerce Platform</h3>
+            <p>A modern online store with real-time inventory and headless CMS.</p>
+            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
+          </div>
+          <div class="project-card glass">
+            <div class="project-img placeholder-img" style="filter: hue-rotate(90deg);"></div>
+            <h3>Financial Dashboard</h3>
+            <p>Data visualization application with vibrant, customized chart elements.</p>
+            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
+          </div>
+          <div class="project-card glass">
+            <div class="project-img placeholder-img" style="filter: hue-rotate(180deg);"></div>
+            <h3>SaaS Landing Page</h3>
+            <p>High-conversion landing page structured with an elegant dark mode theme.</p>
+            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="contact-box glass">
+          <h2>Let's build something <span class="gradient-text">amazing</span></h2>
+          <p>If you're interested in working together, feel free to reach out to me.</p>
+          <a href="mailto:hello@example.com" class="btn btn-primary" style="margin-top: 2rem;">Get in Touch</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Portfolio. Built with Vite and Vanilla JS.</p>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
