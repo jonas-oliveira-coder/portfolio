@@ -5,8 +5,8 @@
   --accent-1: #6366f1;
   --accent-2: #a855f7;
   --accent-3: #14b8a6;
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.08); /* Slightly more opaque for better contrast */
+  --glass-border: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="light"] {
@@ -118,12 +118,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Utilities */
 .glass {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   transition: background-color 0.4s ease, border-color 0.4s ease;
-  transform: translateZ(0); /* Force GPU for backdrop-filter */
+  transform: translateZ(0);
 }
 
 .gradient-text {
