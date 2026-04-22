@@ -1,86 +1,297 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <!-- Modern Premium Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- Background Animated Shapes -->
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonas Oliveira - QA / Analista de Qualidade</title>
+  <!-- Modern Premium Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+
+<body>
+  <!-- Background Animated Shapes -->
+  <div class="bg-shapes-container">
     <div class="bg-shape bg-shape-1"></div>
     <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+  </div>
 
-    <nav class="navbar glass">
-      <div class="logo">Portfo<span>lio</span></div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <nav class="navbar glass">
+    <div class="logo">Jonas<span>.</span></div>
 
-    <main>
-      <!-- Hero Section -->
-      <section id="hero" class="hero section">
-        <div class="hero-content">
-          <span class="badge">Welcome to my space</span>
-          <h1>Hi, I'm <span class="gradient-text">John Doe</span></h1>
-          <p class="subtitle">I craft beautiful, dynamic, and state-of-the-art web experiences that leave a lasting impression.</p>
-          <div class="hero-actions">
-            <!-- CV Download Button -->
-            <a href="/cv.pdf" download class="btn btn-primary">
-              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-              Download CV
-            </a>
-            <a href="#projects" class="btn btn-secondary">View Work</a>
+    <ul class="nav-links desktop-only">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#experience">Experiência</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+
+    <div style="display:flex; align-items:center; gap: 1rem;">
+      <button id="theme-toggle" class="theme-toggle">
+        <svg class="sun-icon icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+          </path>
+        </svg>
+        <svg class="moon-icon icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </button>
+      <div id="mobile-menu-btn" class="nav-mobile-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!-- Mobile Dropdown Menu (Integrated) -->
+    <ul class="nav-links mobile-menu">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#experience">Experiência</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section reveal">
+      <div class="hero-content">
+        <span class="badge">QA & Analista de Qualidade</span>
+        <h1>Olá, eu sou <span class="gradient-text">Jonas Oliveira</span></h1>
+        <p class="subtitle">Especialista em automação de testes, infraestrutura e arquitetura de sistemas com forte base
+          em segurança da informação.</p>
+        <div class="hero-actions">
+          <a href="/jonas-cv.pdf" download class="btn btn-primary">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
+            Baixar CV
+          </a>
+          <a href="#experience" class="btn btn-secondary">Ver Projetos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre & Educação -->
+    <section id="about" class="section reveal">
+      <div class="grid-2-cols">
+        <div>
+          <h2 class="section-title text-left">Sobre <span class="gradient-text">Mim</span></h2>
+          <p class="about-text">
+            Sou um profissional movido a garantir a excelência e a qualidade em sistemas de alto impacto.
+            Com ampla experiência prática liderando processos de QA, sou focado na criação de rotinas automatizadas e no
+            ganho de de produtividade para times de desenvolvimento.
+          </p>
+          <p class="about-text">
+            Tenho forte habilidade com testes End-to-End, Mobile e API usando Cypress, além de sólidos conhecimentos em
+            arquitetura e integração de serviços web.
+          </p>
+        </div>
+        <div class="education-card glass">
+          <h3>Formação Acadêmica</h3>
+          <div class="ed-item">
+            <span class="ed-year">2025 – Atual</span>
+            <h4>Pós-graduação Lato Sensu em Segurança da Informação e Análise Forense</h4>
+            <p>UNCISAL - Universidade Estadual de Ciências da Saúde de Alagoas</p>
+          </div>
+          <div class="ed-item">
+            <span class="ed-year">2022 – 2024</span>
+            <h4>Sistemas para Internet - CST</h4>
+            <p>UNCISAL <span>(Média geral: 9.08)</span></p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-        <div class="projects-grid">
-          <div class="project-card glass">
-            <div class="project-img placeholder-img"></div>
-            <h3>E-Commerce Platform</h3>
-            <p>A modern online store with real-time inventory and headless CMS.</p>
-            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
-          </div>
-          <div class="project-card glass">
-            <div class="project-img placeholder-img" style="filter: hue-rotate(90deg);"></div>
-            <h3>Financial Dashboard</h3>
-            <p>Data visualization application with vibrant, customized chart elements.</p>
-            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
-          </div>
-          <div class="project-card glass">
-            <div class="project-img placeholder-img" style="filter: hue-rotate(180deg);"></div>
-            <h3>SaaS Landing Page</h3>
-            <p>High-conversion landing page structured with an elegant dark mode theme.</p>
-            <a href="#" class="btn btn-outline" style="margin-top:1rem;">View Details</a>
+    <!-- Experiência -->
+    <section id="experience" class="section reveal">
+      <h2 class="section-title">Minha <span class="gradient-text">Experiência</span></h2>
+
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item glass">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Out 2024 – Set 2025</div>
+          <div class="timeline-content">
+            <h3>Analista de Qualidade</h3>
+            <h4>Mesha Tecnologia | Maceió, AL</h4>
+            <p>Trabalho em projetos de escopo nacional (SSCP e SIAC).</p>
+            <ul>
+              <li>Liderança e mentoria técnica de estagiários nos projetos.</li>
+              <li>Teste automatizados Front-end, Back-end e Mobile com <strong>Cypress</strong>, elevando a
+                produtividade em 70%.</li>
+              <li>Criação de funções avançadas reduzindo ciclos de certificação de <strong>7 horas para 10
+                  minutos</strong>.</li>
+            </ul>
           </div>
         </div>
-      </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="section">
-        <div class="contact-box glass">
-          <h2>Let's build something <span class="gradient-text">amazing</span></h2>
-          <p>If you're interested in working together, feel free to reach out to me.</p>
-          <a href="mailto:hello@example.com" class="btn btn-primary" style="margin-top: 2rem;">Get in Touch</a>
+        <!-- Item 2 -->
+        <div class="timeline-item glass">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Out 2023 – Out 2024</div>
+          <div class="timeline-content">
+            <h3>Analista de Qualidade</h3>
+            <h4>Senai Alagoas | Maceió, AL</h4>
+            <p>Foco no projeto nacional <strong>Certifixa</strong> baseado em blockchain.</p>
+            <ul>
+              <li>Resgate de projeto crítico com cronograma atrasado através de reestruturação de QA.</li>
+              <li>Implementação de automação de testes garantindo integridade das entregas.</li>
+              <li>Aumento de produtividade de 20% com automação de cenários manuais.</li>
+            </ul>
+          </div>
         </div>
-      </section>
-    </main>
+    </section>
 
-    <footer>
-      <p>&copy; 2026 Portfolio. Built with Vite and Vanilla JS.</p>
-    </footer>
+    <!-- Projetos -->
+    <section id="projects" class="section reveal" style="padding-top: 0;">
+      <h2 class="section-title">Meus <span class="gradient-text">Projetos</span> em Destaque</h2>
+      <div class="timeline">
+        <!-- Academia Central -->
+        <div class="timeline-item glass">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Projeto Especial</div>
+          <div class="timeline-content">
+            <h3>Academia Central Alagoas de Taekwondo</h3>
+            <h4>Desenvolvimento PWA / Web App</h4>
+            <p>Aplicação moderna (Single Page Application) desenvolvida para a academia de esportes de combate.</p>
+            <ul>
+              <li>Implementação de <strong>Progressive Web App (PWA)</strong>, permitindo instalação nos dispositivos
+                dos alunos.</li>
+              <li>Design responsivo com suporte a manifest e otimização para navegação fluida
+                <strong>(React/Vite)</strong>.
+              </li>
+            </ul>
+            <div style="text-align: center;">
+              <a href="https://academiacentral.com.br/" target="_blank" class="btn btn-secondary"
+                style="margin-top: 1rem; margin-bottom: 1.5rem; padding: 0.5rem 1.5rem; font-size: 0.85rem; display: inline-block;">Acessar
+                o Site</a>
+            </div>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+            <!-- Preview Carousel -->
+            <div class="carousel-container">
+              <div class="carousel-track" id="central-carousel">
+                <img src="/preview-1.png" alt="Tela inicial da Academia Central" loading="lazy" />
+                <img src="/preview-2.png" alt="Detalhes e Modalidades" loading="lazy" />
+                <img src="/preview-3.png" alt="Informações Adicionais" loading="lazy" />
+              </div>
+              <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+              <button class="carousel-btn next" aria-label="Próximo">❯</button>
+              <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item glass">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">Projetos de Infraestrutura</div>
+          <div class="timeline-content">
+            <h3>Suporte em Infraestrutura de TI</h3>
+            <h4>Dias Stores</h4>
+            <ul>
+              <li>Implantação de sistemas de etiquetas e controle de estoque, promovendo maior precisão.</li>
+              <li>Configuração de impressoras e suporte técnico de integração (PDV/NF).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="section reveal">
+      <h2 class="section-title"><span class="gradient-text">Habilidades</span></h2>
+
+      <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--text-secondary); font-weight: 500;">Técnicas
+      </h3>
+      <div class="skills-grid">
+        <div class="skill-badge glass">Cypress</div>
+        <div class="skill-badge glass">TypeScript</div>
+        <div class="skill-badge glass">JavaScript</div>
+        <div class="skill-badge glass">Python</div>
+        <div class="skill-badge glass">SQL / PostgreSQL</div>
+        <div class="skill-badge glass">Docker</div>
+        <div class="skill-badge glass">CI/CD</div>
+        <div class="skill-badge glass">Linux</div>
+        <div class="skill-badge glass">K6</div>
+        <div class="skill-badge glass">Git / GitHub</div>
+        <div class="skill-badge glass">PHP</div>
+        <div class="skill-badge glass">Arquitetura de Sistemas</div>
+      </div>
+
+      <h3
+        style="text-align: center; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--text-secondary); font-weight: 500;">
+        Soft Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-badge glass">Liderança de Equipes</div>
+        <div class="skill-badge glass">Mentoria</div>
+        <div class="skill-badge glass">Resolução Crítica de Problemas</div>
+        <div class="skill-badge glass">Trabalho em Equipe e Colaboração</div>
+        <div class="skill-badge glass">Adaptação Ágil</div>
+      </div>
+
+      <h3
+        style="text-align: center; margin-top: 3rem; margin-bottom: 1.5rem; color: var(--text-secondary); font-weight: 500;">
+        Idiomas Nativos / Estrangeiros</h3>
+      <div class="langs-wrapper">
+        <div class="lang-item glass">
+          <h4>Português</h4>
+          <span>Nativo</span>
+        </div>
+        <div class="lang-item glass">
+          <h4>Inglês</h4>
+          <span>Básico</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section reveal">
+      <div class="contact-box glass">
+        <h2>Vamos construir algo <span class="gradient-text">incrível</span></h2>
+        <p>Sempre interessado em oportunidades escaláveis, qualidade de software e performance.</p>
+        <div class="contact-links">
+          <a href="mailto:jonasoliveiradossantos@outlook.com.br" class="btn btn-primary">
+            Fale Comigo
+          </a>
+          <a href="https://linkedin.com/in/jonas-oliveira-287545257" target="_blank" class="btn btn-secondary">
+            LinkedIn
+          </a>
+          <a href="https://github.com/jonas-oliveira-coder" target="_blank" class="btn btn-secondary">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p> &copy; 2026 Jonas Oliveira Dos Santos.<br> Portfólio focado em Qualidade. <br>Deus é fiel!</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-btn lightbox-prev">❮</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Imagem Ampliada">
+    <button class="lightbox-btn lightbox-next">❯</button>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
