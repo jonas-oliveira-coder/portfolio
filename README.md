@@ -41,6 +41,39 @@ Para simular localmente como o servidor vai ler a sua pasta de build:
 npm run preview
 ```
 
-## Setup de Deploy (Coolify/Docker)
+## Deploy com Docker, GHCR e Coolify
 
-Este repositório contém um `Dockerfile` customizado e um `.dockerignore` projetados especificamente para deploys no Coolify. O Docker faz o build usando uma imagem `node:20-alpine` e serve s arquivos estáticos da pasta `dist` através de um servidor `nginx:alpine` na porta 80.
+O projeto já possui um `Dockerfile` multi-stage: o primeiro estágio gera o build do Vite com `node:20-alpine` e o segundo serve os arquivos estáticos com `nginx:alpine` na porta `80`.
+
+O workflow [`.github/workflows/build-and-deploy.yml`](.github/workflows/build-and-deploy.yml) é executado em pushes nas branches `main` ou `master` e também pode ser iniciado manualmente. Ele:
+
+1. Constrói a imagem usando a raiz deste repositório como contexto.
+2. Publica no GitHub Container Registry (`ghcr.io`) com as tags `latest` e o SHA do commit.
+3. Dispara o webhook do Coolify, quando o secret correspondente está configurado.
+
+### Configuração no Coolify
+
+No Coolify, crie um recurso do tipo **Docker Image** e informe:
+
+```text
+ghcr.io/SEU_USUARIO/SEU_REPOSITORIO:latest
+```
+
+Configure a porta publicada como `80`. Se o pacote do GHCR for privado, cadastre no Coolify um registro Docker com:
+
+- Registry: `ghcr.io`
+- Username: seu usuário do GitHub
+- Password: um Personal Access Token (classic) com permissão `read:packages`
+
+Para atualização automática, copie o deploy webhook gerado pelo Coolify e crie no GitHub um secret chamado `COOLIFY_WEBHOOK_URL` em **Settings > Secrets and variables > Actions**. O workflow aceita também `COOLIFY_URL` ou `COOLIFY_WEBHOOK` para manter compatibilidade com configurações anteriores. Se o seu endpoint exigir autenticação Bearer, crie adicionalmente o secret `COOLIFY_TOKEN`.
+
+Se o webhook não for configurado, a imagem continuará sendo publicada normalmente no GHCR e o deploy poderá ser acionado manualmente pelo Coolify.
+
+### Testar a imagem localmente
+
+```bash
+docker build -t portfolio:local .
+docker run --rm -p 8080:80 portfolio:local
+```
+
+Depois, acesse `http://localhost:8080`.
