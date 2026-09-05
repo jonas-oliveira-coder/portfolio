@@ -40,6 +40,24 @@ const moonIcon = document.querySelector('.moon-icon');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links.mobile-menu');
 
+// Certificate filters
+const filterButtons = document.querySelectorAll('.filter-btn');
+const certificateCards = document.querySelectorAll('.certificate-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedFilter = button.dataset.filter;
+
+        filterButtons.forEach(filterButton => filterButton.classList.remove('active'));
+        button.classList.add('active');
+
+        certificateCards.forEach(card => {
+            const shouldShow = selectedFilter === 'all' || card.dataset.category === selectedFilter;
+            card.classList.toggle('is-hidden', !shouldShow);
+        });
+    });
+});
+
 const savedTheme = localStorage.getItem('theme');
 const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
